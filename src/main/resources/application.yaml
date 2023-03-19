@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: newsRecommend
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  profiles:
+    active: 'druid' #开启druid配置文件
+  servlet: #配置文件上传
+    multipart:
+      max-file-size: 5MB
+server:
+  port: 9180
+  servlet:
+    encoding:
+      charset: UTF-8
+    session:
+      timeout: 10m
+
+mybatis-plus:
+  configuration:
+    #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+management:
+  endpoints:
+    enabled-by-default: true #暴露所有端点信息
+    web:
+      exposure:
+        include: '*'  #以web方式暴露
